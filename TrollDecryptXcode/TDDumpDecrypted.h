@@ -1,8 +1,8 @@
 @interface DumpDecrypted : NSObject {
-	char decryptedAppPathStr[PATH_MAX];
-	char *filename;
-	char *appDirName;
-	char *appDirPath;
+    char decryptedAppPathStr[PATH_MAX];
+    char *filename;
+    char *appDirName;
+    char *appDirPath;
 }
 
 @property (assign) NSString *appPath;
