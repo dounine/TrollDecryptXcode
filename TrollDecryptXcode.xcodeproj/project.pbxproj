@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21DDF67B2B62010700D17066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF67A2B62010700D17066 /* Assets.xcassets */; };
+		21DDF6B72B6202B600D17066 /* SSZipArchive in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF6A52B6202B600D17066 /* SSZipArchive */; };
+		21DDF6B82B6202B600D17066 /* LSApplicationProxy+AltList.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6A72B6202B600D17066 /* LSApplicationProxy+AltList.m */; };
+		21DDF6B92B6202B600D17066 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6A92B6202B600D17066 /* Makefile */; };
+		21DDF6BA2B6202B600D17066 /* TDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6AA2B6202B600D17066 /* TDAppDelegate.m */; };
+		21DDF6BB2B6202B600D17066 /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF6AD2B6202B600D17066 /* entitlements.plist */; };
+		21DDF6BC2B6202B600D17066 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF6AE2B6202B600D17066 /* Resources */; };
+		21DDF6BD2B6202B600D17066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6AF2B6202B600D17066 /* main.m */; };
+		21DDF6BE2B6202B600D17066 /* control in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF6B02B6202B600D17066 /* control */; };
+		21DDF6BF2B6202B600D17066 /* TDDumpDecrypted.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B12B6202B600D17066 /* TDDumpDecrypted.m */; };
+		21DDF6C02B6202B600D17066 /* TDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B32B6202B600D17066 /* TDRootViewController.m */; };
+		21DDF6C12B6202B600D17066 /* TDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B52B6202B600D17066 /* TDUtils.m */; };
+		21DDF6C22B6202B600D17066 /* TDFileManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B62B6202B600D17066 /* TDFileManagerViewController.m */; };
+		21DDF6C42B62038B00D17066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6C32B62038B00D17066 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		21DDF66B2B62010600D17066 /* TrollDecryptXcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrollDecryptXcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21DDF67A2B62010700D17066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21DDF67F2B62010700D17066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21DDF6A52B6202B600D17066 /* SSZipArchive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SSZipArchive; sourceTree = "<group>"; };
+		21DDF6A62B6202B600D17066 /* TDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAppDelegate.h; sourceTree = "<group>"; };
+		21DDF6A72B6202B600D17066 /* LSApplicationProxy+AltList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LSApplicationProxy+AltList.m"; sourceTree = "<group>"; };
+		21DDF6A82B6202B600D17066 /* LSApplicationProxy+AltList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LSApplicationProxy+AltList.h"; sourceTree = "<group>"; };
+		21DDF6A92B6202B600D17066 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		21DDF6AA2B6202B600D17066 /* TDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAppDelegate.m; sourceTree = "<group>"; };
+		21DDF6AB2B6202B600D17066 /* TDDumpDecrypted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDumpDecrypted.h; sourceTree = "<group>"; };
+		21DDF6AC2B6202B600D17066 /* TDFileManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDFileManagerViewController.h; sourceTree = "<group>"; };
+		21DDF6AD2B6202B600D17066 /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
+		21DDF6AE2B6202B600D17066 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		21DDF6AF2B6202B600D17066 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../TrollDecrypt/main.m; sourceTree = "<group>"; };
+		21DDF6B02B6202B600D17066 /* control */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
+		21DDF6B12B6202B600D17066 /* TDDumpDecrypted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDumpDecrypted.m; sourceTree = "<group>"; };
+		21DDF6B22B6202B600D17066 /* TDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDUtils.h; sourceTree = "<group>"; };
+		21DDF6B32B6202B600D17066 /* TDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRootViewController.m; sourceTree = "<group>"; };
+		21DDF6B42B6202B600D17066 /* TDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRootViewController.h; sourceTree = "<group>"; };
+		21DDF6B52B6202B600D17066 /* TDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDUtils.m; sourceTree = "<group>"; };
+		21DDF6B62B6202B600D17066 /* TDFileManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDFileManagerViewController.m; sourceTree = "<group>"; };
+		21DDF6C32B62038B00D17066 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21DDF6682B62010600D17066 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21DDF6622B62010600D17066 = {
+			isa = PBXGroup;
+			children = (
+				21DDF66D2B62010600D17066 /* TrollDecryptXcode */,
+				21DDF66C2B62010600D17066 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21DDF66C2B62010600D17066 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21DDF66B2B62010600D17066 /* TrollDecryptXcode.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21DDF66D2B62010600D17066 /* TrollDecryptXcode */ = {
+			isa = PBXGroup;
+			children = (
+				21DDF6B02B6202B600D17066 /* control */,
+				21DDF6AD2B6202B600D17066 /* entitlements.plist */,
+				21DDF6A82B6202B600D17066 /* LSApplicationProxy+AltList.h */,
+				21DDF6A72B6202B600D17066 /* LSApplicationProxy+AltList.m */,
+				21DDF6AF2B6202B600D17066 /* main.m */,
+				21DDF6A92B6202B600D17066 /* Makefile */,
+				21DDF6AE2B6202B600D17066 /* Resources */,
+				21DDF6A52B6202B600D17066 /* SSZipArchive */,
+				21DDF6A62B6202B600D17066 /* TDAppDelegate.h */,
+				21DDF6AA2B6202B600D17066 /* TDAppDelegate.m */,
+				21DDF6AB2B6202B600D17066 /* TDDumpDecrypted.h */,
+				21DDF6B12B6202B600D17066 /* TDDumpDecrypted.m */,
+				21DDF6AC2B6202B600D17066 /* TDFileManagerViewController.h */,
+				21DDF6B62B6202B600D17066 /* TDFileManagerViewController.m */,
+				21DDF6B42B6202B600D17066 /* TDRootViewController.h */,
+				21DDF6B32B6202B600D17066 /* TDRootViewController.m */,
+				21DDF6B22B6202B600D17066 /* TDUtils.h */,
+				21DDF6B52B6202B600D17066 /* TDUtils.m */,
+				21DDF67A2B62010700D17066 /* Assets.xcassets */,
+				21DDF67F2B62010700D17066 /* Info.plist */,
+				21DDF6C32B62038B00D17066 /* main.m */,
+			);
+			path = TrollDecryptXcode;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21DDF66A2B62010600D17066 /* TrollDecryptXcode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21DDF6842B62010700D17066 /* Build configuration list for PBXNativeTarget "TrollDecryptXcode" */;
+			buildPhases = (
+				21DDF6672B62010600D17066 /* Sources */,
+				21DDF6682B62010600D17066 /* Frameworks */,
+				21DDF6692B62010600D17066 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrollDecryptXcode;
+			productName = TrollDecryptXcode;
+			productReference = 21DDF66B2B62010600D17066 /* TrollDecryptXcode.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21DDF6632B62010600D17066 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					21DDF66A2B62010600D17066 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 21DDF6662B62010600D17066 /* Build configuration list for PBXProject "TrollDecryptXcode" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 21DDF6622B62010600D17066;
+			productRefGroup = 21DDF66C2B62010600D17066 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21DDF66A2B62010600D17066 /* TrollDecryptXcode */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21DDF6692B62010600D17066 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21DDF67B2B62010700D17066 /* Assets.xcassets in Resources */,
+				21DDF6BE2B6202B600D17066 /* control in Resources */,
+				21DDF6BC2B6202B600D17066 /* Resources in Resources */,
+				21DDF6BB2B6202B600D17066 /* entitlements.plist in Resources */,
+				21DDF6B72B6202B600D17066 /* SSZipArchive in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21DDF6672B62010600D17066 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21DDF6B92B6202B600D17066 /* Makefile in Sources */,
+				21DDF6C02B6202B600D17066 /* TDRootViewController.m in Sources */,
+				21DDF6BA2B6202B600D17066 /* TDAppDelegate.m in Sources */,
+				21DDF6BF2B6202B600D17066 /* TDDumpDecrypted.m in Sources */,
+				21DDF6C22B6202B600D17066 /* TDFileManagerViewController.m in Sources */,
+				21DDF6B82B6202B600D17066 /* LSApplicationProxy+AltList.m in Sources */,
+				21DDF6BD2B6202B600D17066 /* main.m in Sources */,
+				21DDF6C42B62038B00D17066 /* main.m in Sources */,
+				21DDF6C12B6202B600D17066 /* TDUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		21DDF6822B62010700D17066 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		21DDF6832B62010700D17066 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21DDF6852B62010700D17066 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q4J8HDK83K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrollDecryptXcode/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ipadump.TrollDecryptXcode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		21DDF6862B62010700D17066 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q4J8HDK83K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrollDecryptXcode/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ipadump.TrollDecryptXcode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21DDF6662B62010600D17066 /* Build configuration list for PBXProject "TrollDecryptXcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21DDF6822B62010700D17066 /* Debug */,
+				21DDF6832B62010700D17066 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21DDF6842B62010700D17066 /* Build configuration list for PBXNativeTarget "TrollDecryptXcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21DDF6852B62010700D17066 /* Debug */,
+				21DDF6862B62010700D17066 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21DDF6632B62010600D17066 /* Project object */;
+}
