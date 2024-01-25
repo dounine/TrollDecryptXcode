@@ -42,13 +42,13 @@
 		21DDF6BA2B6202B600D17066 /* TDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6AA2B6202B600D17066 /* TDAppDelegate.m */; };
 		21DDF6BB2B6202B600D17066 /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF6AD2B6202B600D17066 /* entitlements.plist */; };
 		21DDF6BC2B6202B600D17066 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF6AE2B6202B600D17066 /* Resources */; };
-		21DDF6BD2B6202B600D17066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6AF2B6202B600D17066 /* main.m */; };
 		21DDF6BE2B6202B600D17066 /* control in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF6B02B6202B600D17066 /* control */; };
 		21DDF6BF2B6202B600D17066 /* TDDumpDecrypted.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B12B6202B600D17066 /* TDDumpDecrypted.m */; };
 		21DDF6C02B6202B600D17066 /* TDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B32B6202B600D17066 /* TDRootViewController.m */; };
 		21DDF6C12B6202B600D17066 /* TDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B52B6202B600D17066 /* TDUtils.m */; };
 		21DDF6C22B6202B600D17066 /* TDFileManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B62B6202B600D17066 /* TDFileManagerViewController.m */; };
 		21DDF6C42B62038B00D17066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6C32B62038B00D17066 /* main.m */; };
+		21E3AF7B2B6294CE00AC1563 /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E3AF7A2B6294CE00AC1563 /* MMPDeepSleepPreventer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,7 +121,6 @@
 		21DDF6AC2B6202B600D17066 /* TDFileManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDFileManagerViewController.h; sourceTree = "<group>"; };
 		21DDF6AD2B6202B600D17066 /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 		21DDF6AE2B6202B600D17066 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
-		21DDF6AF2B6202B600D17066 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../TrollDecrypt/main.m; sourceTree = "<group>"; };
 		21DDF6B02B6202B600D17066 /* control */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
 		21DDF6B12B6202B600D17066 /* TDDumpDecrypted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDumpDecrypted.m; sourceTree = "<group>"; };
 		21DDF6B22B6202B600D17066 /* TDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDUtils.h; sourceTree = "<group>"; };
@@ -130,6 +129,8 @@
 		21DDF6B52B6202B600D17066 /* TDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDUtils.m; sourceTree = "<group>"; };
 		21DDF6B62B6202B600D17066 /* TDFileManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDFileManagerViewController.m; sourceTree = "<group>"; };
 		21DDF6C32B62038B00D17066 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21E3AF792B62947800AC1563 /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMPDeepSleepPreventer.h; sourceTree = "<group>"; };
+		21E3AF7A2B6294CE00AC1563 /* MMPDeepSleepPreventer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPDeepSleepPreventer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,12 +223,13 @@
 		21DDF66D2B62010600D17066 /* TrollDecryptXcode */ = {
 			isa = PBXGroup;
 			children = (
+				21E3AF792B62947800AC1563 /* MMPDeepSleepPreventer.h */,
+				21E3AF7A2B6294CE00AC1563 /* MMPDeepSleepPreventer.m */,
 				210DB3762B621B7C00DFAD02 /* server */,
 				21DDF6B02B6202B600D17066 /* control */,
 				21DDF6AD2B6202B600D17066 /* entitlements.plist */,
 				21DDF6A82B6202B600D17066 /* LSApplicationProxy+AltList.h */,
 				21DDF6A72B6202B600D17066 /* LSApplicationProxy+AltList.m */,
-				21DDF6AF2B6202B600D17066 /* main.m */,
 				21DDF6A92B6202B600D17066 /* Makefile */,
 				21DDF6AE2B6202B600D17066 /* Resources */,
 				21DDF6A52B6202B600D17066 /* SSZipArchive */,
@@ -329,6 +331,7 @@
 				210DB3F12B62653F00DFAD02 /* MyJsonResponse.m in Sources */,
 				210DB3AF2B62528B00DFAD02 /* DDTTYLogger.m in Sources */,
 				210DB3D22B6252D500DFAD02 /* HTTPDynamicFileResponse.m in Sources */,
+				21E3AF7B2B6294CE00AC1563 /* MMPDeepSleepPreventer.m in Sources */,
 				210DB3B92B6252AE00DFAD02 /* DDNumber.m in Sources */,
 				21DDF6B92B6202B600D17066 /* Makefile in Sources */,
 				21DDF6C02B6202B600D17066 /* TDRootViewController.m in Sources */,
@@ -350,7 +353,6 @@
 				210DB3BB2B6252AE00DFAD02 /* DDData.m in Sources */,
 				210DB3BA2B6252AE00DFAD02 /* DDRange.m in Sources */,
 				210DB3C32B6252C100DFAD02 /* MultipartMessageHeaderField.m in Sources */,
-				21DDF6BD2B6202B600D17066 /* main.m in Sources */,
 				210DB39F2B62527400DFAD02 /* DispatchQueueLogFormatter.m in Sources */,
 				210DB3AC2B62528B00DFAD02 /* DDASLLogger.m in Sources */,
 				210DB3D52B6252D500DFAD02 /* HTTPErrorResponse.m in Sources */,

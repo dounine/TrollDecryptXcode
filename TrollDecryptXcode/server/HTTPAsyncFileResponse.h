@@ -19,6 +19,7 @@
 	UInt64 fileLength;
 	UInt64 fileOffset;  // File offset as pertains to data given to connection
 	UInt64 readOffset;  // File offset as pertains to data read from file (but maybe not returned to connection)
+    NSMutableDictionary *headers;
 	
 	BOOL aborted;
 	

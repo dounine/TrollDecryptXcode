@@ -4,6 +4,11 @@
 <dict>
 	<key>CFBundleExecutable</key>
 	<string>TrollDecrypt</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>audio</string>
+	</array>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
