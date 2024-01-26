@@ -14,6 +14,7 @@
 
 @interface UIApplication (tweakName)
 + (id)sharedApplication;
+
 - (BOOL)launchApplicationWithIdentifier:(id)arg1 suspended:(BOOL)arg2;
 @end
 
@@ -24,22 +25,34 @@
 #define PROC_PIDPATHINFO                11
 #define PROC_PIDPATHINFO_SIZE           (MAXPATHLEN)
 #define PROC_PIDPATHINFO_MAXSIZE        (4 * MAXPATHLEN)
-#define PROC_ALL_PIDS	            	1
+#define PROC_ALL_PIDS                    1
 
 #ifndef DEBUG
 #   define NSLog(...) (void)0
 #endif
 
 int proc_pidpath(int pid, void *buffer, uint32_t buffersize);
+
 int proc_listpids(uint32_t type, uint32_t typeinfo, void *buffer, int buffersize);
+
 NSArray *appList(void);
+
 NSUInteger iconFormat(void);
+
 NSArray *sysctl_ps(void);
-void decryptApp(NSDictionary *app);
+
+void decryptApp(NSDictionary *app, NSMutableDictionary *callback);
+
 void decryptAppWithPID(pid_t pid);
-void bfinject_rocknroll(pid_t pid, NSString *appName, NSString *version);
+
+void bfinject_rocknroll(pid_t pid, NSString *appName, NSString *version, NSMutableDictionary *callback);
+
 NSArray *decryptedFileList(void);
+
 NSString *docPath(void);
+
 void fetchLatestTrollDecryptVersion(void (^completionHandler)(NSString *version));
+
 void github_fetchLatedVersion(NSString *repo, void (^completionHandler)(NSString *latestVersion));
+
 NSString *trollDecryptVersion(void);

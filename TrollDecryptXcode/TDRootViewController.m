@@ -130,7 +130,8 @@
         UIAlertAction *decrypt = [UIAlertAction actionWithTitle:@"确定"
                                                           style:UIAlertActionStyleDefault
                                                         handler:^(UIAlertAction *action) {
-                                                            decryptApp(app);
+                                                            NSMutableDictionary *callback = [NSMutableDictionary dictionary];
+                                                            decryptApp(app, callback);
                                                         }];
 
         [alert addAction:decrypt];

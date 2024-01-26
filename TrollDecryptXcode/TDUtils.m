@@ -24,10 +24,10 @@ NSArray *appList(void) {
         if (!bundleID || !name || !version || !executable) return;
 
         NSDictionary *item = @{
-            @"bundleID":bundleID,
-            @"name":name,
-            @"version":version,
-            @"executable":executable
+                @"bundleID": bundleID,
+                @"name": name,
+                @"version": version,
+                @"executable": executable
         };
 
         [apps addObject:item];
@@ -36,8 +36,8 @@ NSArray *appList(void) {
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     [apps sortUsingDescriptors:@[descriptor]];
 
-    [apps addObject:@{@"bundleID":@"", @"name":@"", @"version":@"", @"executable":@""}];
-    
+    [apps addObject:@{@"bundleID": @"", @"name": @"", @"version": @"", @"executable": @""}];
+
     return [apps copy];
 }
 
@@ -53,7 +53,7 @@ NSArray *sysctl_ps(void) {
     bzero(pids, sizeof(pids));
     proc_listpids(PROC_ALL_PIDS, 0, pids, sizeof(pids));
     for (int i = 0; i < numberOfProcesses; ++i) {
-        if (pids[i] == 0) { continue; }
+        if (pids[i] == 0) {continue;}
         char pathBuffer[PROC_PIDPATHINFO_MAXSIZE];
         bzero(pathBuffer, PROC_PIDPATHINFO_MAXSIZE);
         proc_pidpath(pids[i], pathBuffer, sizeof(pathBuffer));
@@ -62,7 +62,7 @@ NSArray *sysctl_ps(void) {
             NSString *processID = [[NSString alloc] initWithFormat:@"%d", pids[i]];
             NSString *processName = [[NSString stringWithUTF8String:pathBuffer] lastPathComponent];
             NSDictionary *dict = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:processID, processName, nil] forKeys:[NSArray arrayWithObjects:@"pid", @"proc_name", nil]];
-            
+
             [array addObject:dict];
         }
     }
@@ -70,21 +70,22 @@ NSArray *sysctl_ps(void) {
     return [array copy];
 }
 
-void decryptApp(NSDictionary *app) {
+void decryptApp(NSDictionary *app, NSMutableDictionary *callback) {
     dispatch_async(dispatch_get_main_queue(), ^{
-        alertWindow = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+        alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         alertWindow.rootViewController = [UIViewController new];
         alertWindow.windowLevel = UIWindowLevelAlert + 1;
         [alertWindow makeKeyAndVisible];
-        
+
         // Show a "Decrypting!" alert on the device and block the UI
-            
+
         kw = alertWindow;
-        if([kw respondsToSelector:@selector(topmostPresentedViewController)])
+        if ([kw respondsToSelector:@selector(topmostPresentedViewController)])
             root = [kw performSelector:@selector(topmostPresentedViewController)];
         else
             root = [kw rootViewController];
         root.modalPresentationStyle = UIModalPresentationFullScreen;
+
     });
 
     NSLog(@"[trolldecrypt] spawning thread to do decryption in background...");
@@ -118,6 +119,8 @@ void decryptApp(NSDictionary *app) {
         }
 
         if (pid == -1) {
+            callback[@"ok"] = @NO;
+            callback[@"msg"] = @"pid not found";
             dispatch_async(dispatch_get_main_queue(), ^{
                 [alertController dismissViewControllerAnimated:NO completion:nil];
                 NSLog(@"[trolldecrypt] failed to get pid for binary name: %@", binaryName);
@@ -136,28 +139,29 @@ void decryptApp(NSDictionary *app) {
 
             return;
         }
-
         NSLog(@"[trolldecrypt] pid: %d", pid);
 
-        bfinject_rocknroll(pid, name, version);
+        bfinject_rocknroll(pid, name, version, callback);
     });
 }
 
-void bfinject_rocknroll(pid_t pid, NSString *appName, NSString *version) {
+void bfinject_rocknroll(pid_t pid, NSString *appName, NSString *version,NSMutableDictionary *callback) {
     NSLog(@"[trolldecrypt] Spawning thread to do decryption in the background...");
-    
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSLog(@"[trolldecrypt] Inside decryption thread");
 
-		char pathbuf[PROC_PIDPATHINFO_MAXSIZE];
-    	// int proc_pidpath(pid, pathbuf, sizeof(pathbuf));
+        char pathbuf[PROC_PIDPATHINFO_MAXSIZE];
+        // int proc_pidpath(pid, pathbuf, sizeof(pathbuf));
         proc_pidpath(pid, pathbuf, sizeof(pathbuf));
-		const char *fullPathStr = pathbuf;
+        const char *fullPathStr = pathbuf;
 
 
         NSLog(@"[trolldecrypt] fullPathStr: %s", fullPathStr);
         DumpDecrypted *dd = [[DumpDecrypted alloc] initWithPathToBinary:[NSString stringWithUTF8String:fullPathStr] appName:appName appVersion:version];
-        if(!dd) {
+        if (!dd) {
+            callback[@"ok"] = @NO;
+            callback[@"msg"] = @"[trolldecrypt] ERROR: failed to get DumpDecrypted instance";
             NSLog(@"[trolldecrypt] ERROR: failed to get DumpDecrypted instance");
             return;
         }
@@ -165,29 +169,31 @@ void bfinject_rocknroll(pid_t pid, NSString *appName, NSString *version) {
         NSLog(@"[trolldecrypt] Full path to app: %s   ///   IPA File: %@", fullPathStr, [dd IPAPath]);
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            alertWindow = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+            alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
             alertWindow.rootViewController = [UIViewController new];
             alertWindow.windowLevel = UIWindowLevelAlert + 1;
             [alertWindow makeKeyAndVisible];
-            
+
             // Show a "Decrypting!" alert on the device and block the UI
             alertController = [UIAlertController
-                alertControllerWithTitle:@"Decrypting"
-                message:@"Please wait, this will take a few seconds..."
-                preferredStyle:UIAlertControllerStyleAlert];
-                
+                    alertControllerWithTitle:@"Decrypting"
+                                     message:@"Please wait, this will take a few seconds..."
+                              preferredStyle:UIAlertControllerStyleAlert];
+
             kw = alertWindow;
-            if([kw respondsToSelector:@selector(topmostPresentedViewController)])
+            if ([kw respondsToSelector:@selector(topmostPresentedViewController)])
                 root = [kw performSelector:@selector(topmostPresentedViewController)];
             else
                 root = [kw rootViewController];
             root.modalPresentationStyle = UIModalPresentationFullScreen;
             [root presentViewController:alertController animated:YES completion:nil];
         });
-        
+
         // Do the decryption
         [dd createIPAFile:pid];
 
+        callback[@"ok"] = @YES;
+        callback[@"path"] = [dd IPAPath];
         // Dismiss the alert box
         dispatch_async(dispatch_get_main_queue(), ^{
             [alertController dismissViewControllerAnimated:NO completion:nil];
@@ -213,12 +219,11 @@ void bfinject_rocknroll(pid_t pid, NSString *appName, NSString *version) {
 
             [root presentViewController:doneController animated:YES completion:nil];
         }); // dispatch on main
-                    
+
         NSLog(@"[trolldecrypt] Over and out.");
-        while(1)
+        while (1)
             sleep(9999999);
     }); // dispatch in background
-    
     NSLog(@"[trolldecrypt] All done, exiting constructor.");
 }
 
@@ -259,7 +264,7 @@ NSArray *decryptedFileList(void) {
 }
 
 NSString *docPath(void) {
-    NSError * error = nil;
+    NSError *error = nil;
     [[NSFileManager defaultManager] createDirectoryAtPath:@"/var/mobile/Library/TrollDecrypt/decrypted" withIntermediateDirectories:YES attributes:nil error:&error];
     if (error != nil) {
         NSLog(@"[trolldecrypt] error creating directory: %@", error);
@@ -275,15 +280,15 @@ void decryptAppWithPID(pid_t pid) {
     NSString *error = nil;
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        alertWindow = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+        alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         alertWindow.rootViewController = [UIViewController new];
         alertWindow.windowLevel = UIWindowLevelAlert + 1;
         [alertWindow makeKeyAndVisible];
-        
+
         // Show a "Decrypting!" alert on the device and block the UI
-            
+
         kw = alertWindow;
-        if([kw respondsToSelector:@selector(topmostPresentedViewController)])
+        if ([kw respondsToSelector:@selector(topmostPresentedViewController)])
             root = [kw performSelector:@selector(topmostPresentedViewController)];
         else
             root = [kw rootViewController];
@@ -332,10 +337,10 @@ void decryptAppWithPID(pid_t pid) {
     NSLog(@"[trolldecrypt] app: %@", app);
 
     NSDictionary *appInfo = @{
-        @"bundleID":bundleID,
-        @"name":[app atl_nameToDisplay],
-        @"version":[app atl_shortVersionString],
-        @"executable":executable
+            @"bundleID": bundleID,
+            @"name": [app atl_nameToDisplay],
+            @"version": [app atl_shortVersionString],
+            @"executable": executable
     };
 
     NSLog(@"[trolldecrypt] appInfo: %@", appInfo);
@@ -345,12 +350,13 @@ void decryptAppWithPID(pid_t pid) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Decrypt" message:[NSString stringWithFormat:@"Decrypt %@?", appInfo[@"name"]] preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
         UIAlertAction *decrypt = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            decryptApp(appInfo);
+            NSMutableDictionary *callback = [NSMutableDictionary dictionary];
+            decryptApp(appInfo, callback);
         }];
 
         [alert addAction:decrypt];
         [alert addAction:cancel];
-        
+
         [root presentViewController:alert animated:YES completion:nil];
     });
 }
