@@ -10,4 +10,6 @@
 
 @interface MyHTTPConnection : HTTPConnection
 
+@property (atomic) NSCache *caches;
+
 @end

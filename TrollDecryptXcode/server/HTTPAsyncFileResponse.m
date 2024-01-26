@@ -39,10 +39,6 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
         HTTPLogTrace();
 
         connection = parent; // Parents retain children, children do NOT retain parents
-        headers = [NSMutableDictionary dictionary];
-        headers[@"Content-Disposition"] = @"inline;filename=\"hello.ipa\"";
-//        headers[@"Connection"] = @"keep-alive";
-//        headers[@"Keep-Alive"] = @"timeout=5";
         fileFD = NULL_FD;
         filePath = [fpath copy];
         if (filePath == nil) {
@@ -67,10 +63,6 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
         // If this is a HEAD request we only need to know the fileLength.
     }
     return self;
-}
-
-- (NSDictionary *)httpHeaders{
-    return headers;
 }
 
 - (void)abort {

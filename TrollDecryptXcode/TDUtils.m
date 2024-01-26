@@ -37,7 +37,7 @@ NSArray *appList(void) {
     [apps sortUsingDescriptors:@[descriptor]];
 
     [apps addObject:@{@"bundleID":@"", @"name":@"", @"version":@"", @"executable":@""}];
-
+    
     return [apps copy];
 }
 
