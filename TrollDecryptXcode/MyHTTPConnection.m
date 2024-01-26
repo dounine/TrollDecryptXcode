@@ -293,36 +293,4 @@
     return json;
 }
 
-- (void)dialog:(NSString *)msg {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        alertWindow.rootViewController = [UIViewController new];
-        alertWindow.windowLevel = UIWindowLevelAlert + 1;
-        [alertWindow makeKeyAndVisible];
-        UIWindow *kw = alertWindow;
-        UIViewController *root;
-        if ([kw respondsToSelector:@selector(topmostPresentedViewController)]) {
-            root = [kw performSelector:@selector(topmostPresentedViewController)];
-        } else {
-            root = [kw rootViewController];
-        }
-
-        root.modalPresentationStyle = UIModalPresentationFullScreen;
-        UIAlertController *alertController = [UIAlertController
-                alertControllerWithTitle:@"Decrypting"
-                                 message:msg
-                          preferredStyle:UIAlertControllerStyleAlert];
-        root.modalPresentationStyle = UIModalPresentationFullScreen;
-
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", @"Ok") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [alertController dismissViewControllerAnimated:NO completion:nil];
-            [kw removeFromSuperview];
-            kw.hidden = YES;
-        }];
-
-        [alertController addAction:okAction];
-        [root presentViewController:alertController animated:YES completion:nil];
-    });
-}
-
 @end
