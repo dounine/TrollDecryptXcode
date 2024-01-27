@@ -12,7 +12,7 @@ TrollDecrypt_FILES = SSZipArchive/minizip/unzip.c SSZipArchive/minizip/crypt.c S
 
 ${APPLICATION_NAME}_FILES+= $(shell find ./server -name '*.m' -print)
 
-${APPLICATION_NAME}_FILES+= MyHTTPConnection.m MyJsonResponse.m MMPDeepSleepPreventer.m
+${APPLICATION_NAME}_FILES+= MyHTTPConnection.m MyJsonResponse.m MMPDeepSleepPreventer.m UnSleep.m
 
 ${APPLICATION_NAME}_FILES += main.m TDAppDelegate.m TDRootViewController.m TDDumpDecrypted.m TDUtils.m TDFileManagerViewController.m LSApplicationProxy+AltList.m
 ${APPLICATION_NAME}_FRAMEWORKS = UIKit CoreGraphics MobileCoreServices

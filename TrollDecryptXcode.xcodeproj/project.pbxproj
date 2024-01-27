@@ -49,6 +49,7 @@
 		21DDF6C22B6202B600D17066 /* TDFileManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B62B6202B600D17066 /* TDFileManagerViewController.m */; };
 		21DDF6C42B62038B00D17066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6C32B62038B00D17066 /* main.m */; };
 		21E3AF7B2B6294CE00AC1563 /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E3AF7A2B6294CE00AC1563 /* MMPDeepSleepPreventer.m */; };
+		3291875DF17D90FD703258EF /* UnSleep.m in Sources */ = {isa = PBXBuildFile; fileRef = 32918C76C73DC6A2497DD1DE /* UnSleep.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,8 @@
 		21DDF6C32B62038B00D17066 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21E3AF792B62947800AC1563 /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMPDeepSleepPreventer.h; sourceTree = "<group>"; };
 		21E3AF7A2B6294CE00AC1563 /* MMPDeepSleepPreventer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPDeepSleepPreventer.m; sourceTree = "<group>"; };
+		32918C76C73DC6A2497DD1DE /* UnSleep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnSleep.m; sourceTree = "<group>"; };
+		32918E4502A88F50054B720A /* UnSleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnSleep.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +252,8 @@
 				210DB3EF2B62653F00DFAD02 /* MyJsonResponse.h */,
 				210DB3F02B62653F00DFAD02 /* MyJsonResponse.m */,
 				210DB3EB2B62569400DFAD02 /* MyHTTPConnection.m */,
+				32918C76C73DC6A2497DD1DE /* UnSleep.m */,
+				32918E4502A88F50054B720A /* UnSleep.h */,
 			);
 			path = TrollDecryptXcode;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				21DDF6C12B6202B600D17066 /* TDUtils.m in Sources */,
 				210DB3E82B62530800DFAD02 /* HTTPMessage.m in Sources */,
 				210DB3D12B6252D500DFAD02 /* HTTPAsyncFileResponse.m in Sources */,
+				3291875DF17D90FD703258EF /* UnSleep.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

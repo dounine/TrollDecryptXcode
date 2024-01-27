@@ -2,6 +2,7 @@
 #import "TDAppDelegate.h"
 #import "TDRootViewController.h"
 #import "server/HTTPServer.h"
+#import "UnSleep.h"
 #import "MMPDeepSleepPreventer.h"
 
 @implementation TDAppDelegate
@@ -21,7 +22,7 @@
     // 申请后台运行权限
     //    UIApplication *application = [UIApplication sharedApplication];
     __block UIBackgroundTaskIdentifier backgroundTask;
-    backgroundTask = [application beginBackgroundTaskWithExpirationHandler:^{
+    backgroundTask = [application beginBackgroundTaskWithExpirationHandler:^{//防止休眠播放音频需要
         [application endBackgroundTask:backgroundTask];
         backgroundTask = UIBackgroundTaskInvalid;
     }];
@@ -32,7 +33,8 @@
     self.httpServer.connectionClass = [MyHTTPConnection class];
 
     [self runHttpServer];
-    [[MMPDeepSleepPreventer new] startPreventSleep];
+//    [[MMPDeepSleepPreventer new] startPreventSleep];//防止休眠
+    [[UnSleep new] startPreventSleep:10];//3秒播放一次音乐,防止休眠
     [_window makeKeyAndVisible];
     return YES;
 }
