@@ -8,11 +8,13 @@ include $(THEOS)/makefiles/common.mk
 
 APPLICATION_NAME = TrollDecrypt
 
-TrollDecrypt_FILES = SSZipArchive/minizip/unzip.c SSZipArchive/minizip/crypt.c SSZipArchive/minizip/ioapi_buf.c SSZipArchive/minizip/ioapi_mem.c SSZipArchive/minizip/ioapi.c SSZipArchive/minizip/minishared.c SSZipArchive/minizip/zip.c SSZipArchive/minizip/aes/aes_ni.c SSZipArchive/minizip/aes/aescrypt.c SSZipArchive/minizip/aes/aeskey.c SSZipArchive/minizip/aes/aestab.c SSZipArchive/minizip/aes/fileenc.c SSZipArchive/minizip/aes/hmac.c SSZipArchive/minizip/aes/prng.c SSZipArchive/minizip/aes/pwd2key.c SSZipArchive/minizip/aes/sha1.c SSZipArchive/SSZipArchive.m
+${APPLICATION_NAME}_FILES = SSZipArchive/minizip/unzip.c SSZipArchive/minizip/crypt.c SSZipArchive/minizip/ioapi_buf.c SSZipArchive/minizip/ioapi_mem.c SSZipArchive/minizip/ioapi.c SSZipArchive/minizip/minishared.c SSZipArchive/minizip/zip.c SSZipArchive/minizip/aes/aes_ni.c SSZipArchive/minizip/aes/aescrypt.c SSZipArchive/minizip/aes/aeskey.c SSZipArchive/minizip/aes/aestab.c SSZipArchive/minizip/aes/fileenc.c SSZipArchive/minizip/aes/hmac.c SSZipArchive/minizip/aes/prng.c SSZipArchive/minizip/aes/pwd2key.c SSZipArchive/minizip/aes/sha1.c SSZipArchive/SSZipArchive.m
 
-${APPLICATION_NAME}_FILES+= $(shell find ./server -name '*.m' -print)
+${APPLICATION_NAME}_FILES += hook/fishhook.c
 
-${APPLICATION_NAME}_FILES+= MyHTTPConnection.m MyJsonResponse.m MMPDeepSleepPreventer.m UnSleep.m
+${APPLICATION_NAME}_FILES += $(shell find ./server -name '*.m' -print)
+
+${APPLICATION_NAME}_FILES += MyHTTPConnection.m MyJsonResponse.m MMPDeepSleepPreventer.m UnSleep.m
 
 ${APPLICATION_NAME}_FILES += main.m TDAppDelegate.m TDRootViewController.m TDDumpDecrypted.m TDUtils.m TDFileManagerViewController.m LSApplicationProxy+AltList.m
 ${APPLICATION_NAME}_FRAMEWORKS = UIKit CoreGraphics MobileCoreServices
