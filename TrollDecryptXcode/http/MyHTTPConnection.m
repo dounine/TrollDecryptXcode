@@ -1,8 +1,28 @@
+#import <sys/utsname.h>
 #import "MyHTTPConnection.h"
 #import "MyJsonResponse.h"
 #import "../TDUtils.h"
 #import "../server/HTTPAsyncFileResponse.h"
 #import "../server/HTTPMessage.h"
+
+#include "../headers/IOSurface/IOSurfaceAccelerator.h"
+#include "../headers/IOSurface/IOMobileFramebuffer.h"
+#import "../headers/IOSurface/IOSurface.h"
+#include "../headers/IOSurface/CoreSurface.h"
+#import "../server/HTTPDataResponse.h"
+
+OBJC_EXTERN void CARenderServerRenderDisplay(kern_return_t a, CFStringRef b, IOSurfaceRef surface, int x, int y);
+
+OBJC_EXTERN kern_return_t IOSurfaceLock(IOSurfaceRef buffer, IOSurfaceLockOptions options, uint32_t *seed);
+
+OBJC_EXTERN kern_return_t IOSurfaceUnLock(IOSurfaceRef buffer, IOSurfaceLockOptions options, uint32_t *seed);
+
+OBJC_EXTERN IOSurfaceRef IOSurfaceCreate(CFDictionaryRef dictionary);
+
+OBJC_EXTERN CGImageRef UICreateCGImageFromIOSurface(IOSurfaceRef surface);
+
+static CGFloat device_screen_width = 0;
+static CGFloat device_screen_height = 0;
 
 @implementation MyHTTPConnection
 
@@ -68,6 +88,13 @@
 }
 
 - (NSObject <HTTPResponse> *)fileDownload:(NSString *)filePath {
+    //判断文件是否存在
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isExist = [fileManager fileExistsAtPath:filePath];
+    if (!isExist) {
+        return [self fail:@"文件不存在"];
+    }
+
     HTTPAsyncFileResponse *response = [[HTTPAsyncFileResponse alloc] initWithFilePath:filePath forConnection:self];
     return response;
 }
@@ -118,6 +145,173 @@
 - (NSObject <HTTPResponse> *)queryAppList {
     NSArray *apps = appList();
     return [self ok:apps];
+}
+
+- (NSString *)getDocumentRoot {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return paths[0];
+}
+
+typedef struct __IOSurface *IOSurfaceRef;
+
+UIKIT_EXTERN CGImageRef UICreateCGImageFromIOSurface(IOSurfaceRef);
+
+- (UIImage *)appScreenshot {
+    UIWindow *screenWindow = [[UIApplication sharedApplication] keyWindow];
+    UIGraphicsBeginImageContextWithOptions(screenWindow.frame.size, NO, 0.0);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [screenWindow.layer renderInContext:ctx];
+    UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return screenImage;
+}
+
+
+OBJC_EXTERN UIImage *_UICreateScreenUIImage(void);
+
+- (NSObject <HTTPResponse> *)privateApiScreenshot {
+    NSString *filePath = [[self getDocumentRoot] stringByAppendingPathComponent:@"screenshot.png"];
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:filePath]) {
+        NSError *error;
+        [fileManager removeItemAtPath:filePath error:&error];
+        if (error) {
+            return [self fail:[NSString stringWithFormat:@"删除截图失败：%@", error]];
+        }
+    }
+    UIImage *screenImage = _UICreateScreenUIImage();
+
+    [UIImagePNGRepresentation(screenImage) writeToFile:filePath atomically:NO];
+    BOOL isExist = [fileManager fileExistsAtPath:filePath];
+    if (!isExist) {
+        return [self fail:@"截屏失败"];
+    }
+    return [self ok:filePath];
+}
+
+int roundUp(int numToRound, int multiple) {
+    if (multiple == 0)
+        return numToRound;
+
+    int remainder = numToRound % multiple;
+    if (remainder == 0)
+        return numToRound;
+
+    return numToRound + multiple - remainder;
+}
+
+- (NSObject <HTTPResponse> *)Screenshot2 {
+    CGImageRef cgImageRef = [self createScreenShotCGImageRef];
+    UIImage *uiImage = [UIImage imageWithCGImage:cgImageRef];
+//    CFRelease(cgImageRef);
+    //save image
+    NSString *filePath = [[self getDocumentRoot] stringByAppendingPathComponent:@"screenshot.png"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:filePath]) {
+        NSError *error;
+        [fileManager removeItemAtPath:filePath error:&error];
+        if (error) {
+            return [self fail:[NSString stringWithFormat:@"删除截图失败：%@", error]];
+        }
+    }
+    [UIImagePNGRepresentation(uiImage) writeToFile:filePath atomically:NO];
+    BOOL isExist = [fileManager fileExistsAtPath:filePath];
+    if (!isExist) {
+        return [self fail:@"截屏失败"];
+    }
+    return [self ok:filePath];
+}
+
+
+- (CGImageRef)createScreenShotCGImageRef {
+    CGFloat scale = [UIScreen mainScreen].scale;
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+
+    int height = (int) (screenSize.height * scale);
+    int width = (int) (screenSize.width * scale);
+
+    // check whether it is ipad8 or later
+
+//    int temp = width;
+//    width = height;
+//    height = temp;
+    int bytesPerElement = 4;
+    int bytesPerRow = roundUp(bytesPerElement * width, 32);
+
+    NSNumber *IOSurfaceBytesPerElement = [NSNumber numberWithInteger:bytesPerElement];
+    NSNumber *IOSurfaceBytesPerRow = [NSNumber numberWithInteger:bytesPerRow]; // don't know why but it should be a multiple of 32
+    NSNumber *IOSurfaceAllocSize = [NSNumber numberWithInteger:bytesPerRow * height];
+    NSNumber *nheight = [NSNumber numberWithInteger:height];
+    NSNumber *nwidth = [NSNumber numberWithInteger:width];
+    NSNumber *IOSurfacePixelFormat = [NSNumber numberWithInteger:1111970369];
+    NSNumber *IOSurfaceIsGlobal = [NSNumber numberWithInteger:1];
+
+    NSDictionary *properties = [[NSDictionary alloc] initWithObjectsAndKeys:IOSurfaceAllocSize, @"IOSurfaceAllocSize"
+            , IOSurfaceBytesPerElement, @"IOSurfaceBytesPerElement", IOSurfaceBytesPerRow, @"IOSurfaceBytesPerRow", nheight, @"IOSurfaceHeight",
+                                                                            IOSurfaceIsGlobal, @"IOSurfaceIsGlobal", IOSurfacePixelFormat, @"IOSurfacePixelFormat", nwidth, @"IOSurfaceWidth", nil];
+
+    IOSurfaceRef screenSurface = IOSurfaceCreate((__bridge CFDictionaryRef) (properties));
+
+    properties = nil;
+
+    IOSurfaceLock(screenSurface, 0, NULL);
+    CARenderServerRenderDisplay(0, CFSTR("LCD"), screenSurface, 0, 0);
+
+    CGImageRef cgImageRef = nil;
+    if (screenSurface) {
+        cgImageRef = UICreateCGImageFromIOSurface(screenSurface);
+    }
+    IOSurfaceUnlock(screenSurface, 0, NULL);
+    CFRelease(screenSurface);
+    screenSurface = nil;
+
+    return cgImageRef;
+}
+
+- (NSObject <HTTPResponse> *)queryScreenshot {
+//    IOSurfaceRef ioSurfaceRef = (__bridge IOSurfaceRef) ([UIWindow performSelector:@selector(createScreenIOSurface)]);
+//    CGImageRef cgImageRef = UICreateCGImageFromIOSurface(ioSurfaceRef);
+//    UIImage *uiImage = [UIImage imageWithCGImage:cgImageRef];
+//    CFRelease(ioSurfaceRef);
+//    CGImageRelease(cgImageRef);
+
+
+    UIWindow *screenWindow = [[UIApplication sharedApplication] keyWindow];
+    UIGraphicsBeginImageContextWithOptions(screenWindow.frame.size, NO, 0.0);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [screenWindow.layer renderInContext:ctx];
+    UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+//    UIViewController *root = screenWindow.rootViewController;
+//    // 开始绘图上下文
+//    UIGraphicsBeginImageContextWithOptions(root.view.bounds.size, NO, 0.0);
+//    // 获取当前上下文
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    // 将当前视图的内容渲染到上下文中
+//    [screenWindow.layer renderInContext:context];
+//    // 从上下文中获取图像
+//    UIImage *screenImage = [[UIGraphicsImageRendererContext alloc] currentImage];
+//    // 结束绘图上下文
+//    UIGraphicsEndImageContext();
+//    UIImage *screenImage = _UICreateScreenUIImage();
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *filePath = [[self getDocumentRoot] stringByAppendingPathComponent:@"screenshot.png"];
+    if ([fileManager fileExistsAtPath:filePath]) {
+        NSError *error;
+        [fileManager removeItemAtPath:filePath error:&error];
+        if (error) {
+            return [self fail:[NSString stringWithFormat:@"删除截图失败：%@", error]];
+        }
+    }
+//    // Save image.
+    [UIImagePNGRepresentation(screenImage) writeToFile:filePath atomically:NO];
+    BOOL isExist = [fileManager fileExistsAtPath:filePath];
+    if (!isExist) {
+        return [self fail:@"截屏失败"];
+    }
+    return [self ok:filePath];
 }
 
 - (NSObject <HTTPResponse> *)queryDumpStatus:(NSString *)id {
@@ -225,6 +419,8 @@
     } else if ([method isEqualToString:@"POST"] && [[url path] isEqualToString:@"/file/clear"]) {
         NSString *filePath = @"/var/mobile/Library/TrollDecrypt/decrypted";
         return [self folderClear:filePath];
+    } else if ([method isEqualToString:@"GET"] && [[url path] isEqualToString:@"/image/screenshot"]) {
+        return [self Screenshot2];
     }
 
     return [self apis];
@@ -274,6 +470,10 @@
             @"/file/clear": @{
                     @"method": @"post",
                     @"des": @"砸壳文件夹清空"
+            },
+            @"/image/screenshot": @{
+                    @"method": @"get",
+                    @"des": @"截屏"
             }
     };
     return [self ok:data];

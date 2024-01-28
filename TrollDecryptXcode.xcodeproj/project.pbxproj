@@ -50,6 +50,7 @@
 		329189738BC93F90ABD44EF2 /* MyJsonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 329182055E7DEE6EA6C85963 /* MyJsonResponse.m */; };
 		329189D1F0DFAFBFDC98BC87 /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 32918E1B7DF5610C1F719390 /* MyHTTPConnection.m */; };
 		32918DC6430C582282766700 /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32918DCD2AC004D6A623C9F9 /* MMPDeepSleepPreventer.m */; };
+		32918E6251830B40AD9618EF /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 32918012BCF18E8BFF082D81 /* Screen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,53 @@
 		210DB3E22B62530800DFAD02 /* HTTPLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPLogging.h; sourceTree = "<group>"; };
 		210DB3E32B62530800DFAD02 /* HTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponse.h; sourceTree = "<group>"; };
 		210DB3E42B62530800DFAD02 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
+		210DB3F22B66370200DFAD02 /* IOBSD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOBSD.h; sourceTree = "<group>"; };
+		210DB3F32B66370200DFAD02 /* IOTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTypes.h; sourceTree = "<group>"; };
+		210DB3F42B66370200DFAD02 /* iokitmig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iokitmig.h; sourceTree = "<group>"; };
+		210DB3F52B66370200DFAD02 /* IOKitServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitServer.h; sourceTree = "<group>"; };
+		210DB3F62B66370200DFAD02 /* IOCFPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFPlugIn.h; sourceTree = "<group>"; };
+		210DB3F72B66370200DFAD02 /* CoreSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSurface.h; sourceTree = "<group>"; };
+		210DB3F82B66370200DFAD02 /* IOSurfaceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurfaceClient.h; sourceTree = "<group>"; };
+		210DB3F92B66370200DFAD02 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
+		210DB3FA2B66370200DFAD02 /* IOReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOReturn.h; sourceTree = "<group>"; };
+		210DB3FB2B66370200DFAD02 /* IOMobileFramebuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOMobileFramebuffer.h; sourceTree = "<group>"; };
+		210DB3FC2B66370200DFAD02 /* IOMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOMessage.h; sourceTree = "<group>"; };
+		210DB3FD2B66370200DFAD02 /* IOCFUnserialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFUnserialize.h; sourceTree = "<group>"; };
+		210DB3FE2B66370200DFAD02 /* IOSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurface.h; sourceTree = "<group>"; };
+		210DB3FF2B66370200DFAD02 /* IOCFURLAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFURLAccess.h; sourceTree = "<group>"; };
+		210DB4002B66370200DFAD02 /* IODataQueueShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IODataQueueShared.h; sourceTree = "<group>"; };
+		210DB4012B66370200DFAD02 /* IOKitLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitLib.h; sourceTree = "<group>"; };
+		210DB4022B66370200DFAD02 /* IOKitKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitKeys.h; sourceTree = "<group>"; };
+		210DB4032B66370200DFAD02 /* IOCFSerialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFSerialize.h; sourceTree = "<group>"; };
+		210DB4042B66370200DFAD02 /* IODataQueueClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IODataQueueClient.h; sourceTree = "<group>"; };
+		210DB4052B66370200DFAD02 /* IOSharedLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSharedLock.h; sourceTree = "<group>"; };
+		210DB4062B66370200DFAD02 /* IOSurfaceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurfaceAPI.h; sourceTree = "<group>"; };
+		210DB4072B66370200DFAD02 /* IOSurfaceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurfaceBase.h; sourceTree = "<group>"; };
+		210DB4082B66370200DFAD02 /* IOSurfaceAccelerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurfaceAccelerator.h; sourceTree = "<group>"; };
+		210DB4092B66370200DFAD02 /* IOCFBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFBundle.h; sourceTree = "<group>"; };
+		210DB4182B66532200DFAD02 /* iokitmig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iokitmig.h; sourceTree = "<group>"; };
+		210DB4192B66532200DFAD02 /* IODataQueueClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IODataQueueClient.h; sourceTree = "<group>"; };
+		210DB41A2B66532200DFAD02 /* IODataQueueShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IODataQueueShared.h; sourceTree = "<group>"; };
+		210DB41B2B66532200DFAD02 /* IOKitLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitLib.h; sourceTree = "<group>"; };
+		210DB41C2B66532200DFAD02 /* IOReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOReturn.h; sourceTree = "<group>"; };
+		210DB41D2B66532200DFAD02 /* IOSharedLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSharedLock.h; sourceTree = "<group>"; };
+		210DB41E2B66532200DFAD02 /* IOCFSerialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFSerialize.h; sourceTree = "<group>"; };
+		210DB41F2B66532200DFAD02 /* IOSurfaceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurfaceAPI.h; sourceTree = "<group>"; };
+		210DB4202B66532200DFAD02 /* IOSurfaceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurfaceBase.h; sourceTree = "<group>"; };
+		210DB4212B66532200DFAD02 /* IOKitServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitServer.h; sourceTree = "<group>"; };
+		210DB4222B66532200DFAD02 /* IOKitKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitKeys.h; sourceTree = "<group>"; };
+		210DB4232B66532200DFAD02 /* IOMobileFrameBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOMobileFrameBuffer.h; sourceTree = "<group>"; };
+		210DB4242B66532200DFAD02 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
+		210DB4252B66532200DFAD02 /* IOCFBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFBundle.h; sourceTree = "<group>"; };
+		210DB4262B66532200DFAD02 /* IOBSD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOBSD.h; sourceTree = "<group>"; };
+		210DB4272B66532200DFAD02 /* IOCFPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFPlugIn.h; sourceTree = "<group>"; };
+		210DB4282B66532300DFAD02 /* IOCFUnserialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFUnserialize.h; sourceTree = "<group>"; };
+		210DB4292B66532300DFAD02 /* IOMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOMessage.h; sourceTree = "<group>"; };
+		210DB42A2B66532300DFAD02 /* CoreSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSurface.h; sourceTree = "<group>"; };
+		210DB42B2B66532300DFAD02 /* IOSurfaceAccelerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurfaceAccelerator.h; sourceTree = "<group>"; };
+		210DB42C2B66532300DFAD02 /* IOSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurface.h; sourceTree = "<group>"; };
+		210DB42D2B66532300DFAD02 /* IOTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTypes.h; sourceTree = "<group>"; };
+		210DB42E2B66532300DFAD02 /* IOCFURLAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOCFURLAccess.h; sourceTree = "<group>"; };
 		21DDF66B2B62010600D17066 /* TrollDecryptXcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrollDecryptXcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DDF67A2B62010700D17066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21DDF6A52B6202B600D17066 /* SSZipArchive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SSZipArchive; sourceTree = "<group>"; };
@@ -126,6 +174,8 @@
 		21DDF6B52B6202B600D17066 /* TDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDUtils.m; sourceTree = "<group>"; };
 		21DDF6B62B6202B600D17066 /* TDFileManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDFileManagerViewController.m; sourceTree = "<group>"; };
 		21DDF6C32B62038B00D17066 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32918012BCF18E8BFF082D81 /* Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen.m; sourceTree = "<group>"; };
+		329180675A064FA8BFCAB9BF /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
 		3291815724B57F193E9AF082 /* MyJsonResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJsonResponse.h; sourceTree = "<group>"; };
 		329182055E7DEE6EA6C85963 /* MyJsonResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJsonResponse.m; sourceTree = "<group>"; };
 		329186875F4E7E9086A191FA /* UnSleep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnSleep.m; sourceTree = "<group>"; };
@@ -249,6 +299,9 @@
 				32918DDED0DD45AC47FF4D29 /* audio */,
 				3291874DE0BD5EEACF8D4E05 /* http */,
 				329182B5BA5AD1F985042670 /* dump */,
+				329187A7A7289AC95C090505 /* headers */,
+				329188006EA8B2191DA86D02 /* utils */,
+				3291834897F89C1AD35A72DA /* headers2 */,
 			);
 			path = TrollDecryptXcode;
 			sourceTree = "<group>";
@@ -260,6 +313,67 @@
 			path = dump;
 			sourceTree = "<group>";
 		};
+		329182E8ECE11D8DDE2CC835 /* IOSurface */ = {
+			isa = PBXGroup;
+			children = (
+				210DB3F72B66370200DFAD02 /* CoreSurface.h */,
+				210DB3F22B66370200DFAD02 /* IOBSD.h */,
+				210DB4092B66370200DFAD02 /* IOCFBundle.h */,
+				210DB3F62B66370200DFAD02 /* IOCFPlugIn.h */,
+				210DB4032B66370200DFAD02 /* IOCFSerialize.h */,
+				210DB3FD2B66370200DFAD02 /* IOCFUnserialize.h */,
+				210DB3FF2B66370200DFAD02 /* IOCFURLAccess.h */,
+				210DB4042B66370200DFAD02 /* IODataQueueClient.h */,
+				210DB4002B66370200DFAD02 /* IODataQueueShared.h */,
+				210DB4022B66370200DFAD02 /* IOKitKeys.h */,
+				210DB4012B66370200DFAD02 /* IOKitLib.h */,
+				210DB3F42B66370200DFAD02 /* iokitmig.h */,
+				210DB3F52B66370200DFAD02 /* IOKitServer.h */,
+				210DB3FC2B66370200DFAD02 /* IOMessage.h */,
+				210DB3FB2B66370200DFAD02 /* IOMobileFramebuffer.h */,
+				210DB3FA2B66370200DFAD02 /* IOReturn.h */,
+				210DB4052B66370200DFAD02 /* IOSharedLock.h */,
+				210DB3FE2B66370200DFAD02 /* IOSurface.h */,
+				210DB4082B66370200DFAD02 /* IOSurfaceAccelerator.h */,
+				210DB4062B66370200DFAD02 /* IOSurfaceAPI.h */,
+				210DB4072B66370200DFAD02 /* IOSurfaceBase.h */,
+				210DB3F82B66370200DFAD02 /* IOSurfaceClient.h */,
+				210DB3F32B66370200DFAD02 /* IOTypes.h */,
+				210DB3F92B66370200DFAD02 /* OSMessageNotification.h */,
+			);
+			path = IOSurface;
+			sourceTree = "<group>";
+		};
+		3291834897F89C1AD35A72DA /* headers2 */ = {
+			isa = PBXGroup;
+			children = (
+				210DB42A2B66532300DFAD02 /* CoreSurface.h */,
+				210DB4262B66532200DFAD02 /* IOBSD.h */,
+				210DB4252B66532200DFAD02 /* IOCFBundle.h */,
+				210DB4272B66532200DFAD02 /* IOCFPlugIn.h */,
+				210DB41E2B66532200DFAD02 /* IOCFSerialize.h */,
+				210DB4282B66532300DFAD02 /* IOCFUnserialize.h */,
+				210DB42E2B66532300DFAD02 /* IOCFURLAccess.h */,
+				210DB4192B66532200DFAD02 /* IODataQueueClient.h */,
+				210DB41A2B66532200DFAD02 /* IODataQueueShared.h */,
+				210DB4222B66532200DFAD02 /* IOKitKeys.h */,
+				210DB41B2B66532200DFAD02 /* IOKitLib.h */,
+				210DB4182B66532200DFAD02 /* iokitmig.h */,
+				210DB4212B66532200DFAD02 /* IOKitServer.h */,
+				210DB4292B66532300DFAD02 /* IOMessage.h */,
+				210DB4232B66532200DFAD02 /* IOMobileFrameBuffer.h */,
+				210DB41C2B66532200DFAD02 /* IOReturn.h */,
+				210DB41D2B66532200DFAD02 /* IOSharedLock.h */,
+				210DB42C2B66532300DFAD02 /* IOSurface.h */,
+				210DB42B2B66532300DFAD02 /* IOSurfaceAccelerator.h */,
+				210DB41F2B66532200DFAD02 /* IOSurfaceAPI.h */,
+				210DB4202B66532200DFAD02 /* IOSurfaceBase.h */,
+				210DB42D2B66532300DFAD02 /* IOTypes.h */,
+				210DB4242B66532200DFAD02 /* OSMessageNotification.h */,
+			);
+			path = headers2;
+			sourceTree = "<group>";
+		};
 		3291874DE0BD5EEACF8D4E05 /* http */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +383,23 @@
 				32918E1B7DF5610C1F719390 /* MyHTTPConnection.m */,
 			);
 			path = http;
+			sourceTree = "<group>";
+		};
+		329187A7A7289AC95C090505 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				329182E8ECE11D8DDE2CC835 /* IOSurface */,
+			);
+			path = headers;
+			sourceTree = "<group>";
+		};
+		329188006EA8B2191DA86D02 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				329180675A064FA8BFCAB9BF /* Screen.h */,
+				32918012BCF18E8BFF082D81 /* Screen.m */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		32918DDED0DD45AC47FF4D29 /* audio */ = {
@@ -392,6 +523,7 @@
 				3291877021DC7A6CB0596027 /* UnSleep.m in Sources */,
 				329189738BC93F90ABD44EF2 /* MyJsonResponse.m in Sources */,
 				329189D1F0DFAFBFDC98BC87 /* MyHTTPConnection.m in Sources */,
+				32918E6251830B40AD9618EF /* Screen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,7 @@ ${APPLICATION_NAME}_FILES += $(shell find ./http -name '*.m' -print)
 ${APPLICATION_NAME}_FILES += main.m TDAppDelegate.m TDRootViewController.m TDDumpDecrypted.m TDUtils.m TDFileManagerViewController.m LSApplicationProxy+AltList.m
 ${APPLICATION_NAME}_FRAMEWORKS = UIKit CoreGraphics MobileCoreServices
 ${APPLICATION_NAME}_CFLAGS = -fobjc-arc
+${APPLICATION_NAME}_PRIVATE_FRAMEWORKS = IOKit IOSurface
 ${APPLICATION_NAME}_CODESIGN_FLAGS = -Sentitlements.plist
 
 include $(THEOS_MAKE_PATH)/application.mk
