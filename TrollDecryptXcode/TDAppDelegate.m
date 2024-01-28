@@ -1,9 +1,9 @@
-#import "MyHTTPConnection.h"
+#import "http/MyHTTPConnection.h"
 #import "TDAppDelegate.h"
 #import "TDRootViewController.h"
 #import "server/HTTPServer.h"
-#import "UnSleep.h"
-#import "MMPDeepSleepPreventer.h"
+#import "audio/UnSleep.h"
+#import "audio/MMPDeepSleepPreventer.h"
 
 @implementation TDAppDelegate
 

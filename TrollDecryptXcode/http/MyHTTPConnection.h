@@ -5,11 +5,11 @@
 //  Created by lake on 2024/1/25.
 //
 #import <Foundation/Foundation.h>
-#import "server/HTTPConnection.h"
-#import "server/HTTPResponse.h"
+#import "../server/HTTPConnection.h"
+#import "../server/HTTPResponse.h"
 
 @interface MyHTTPConnection : HTTPConnection
 
-@property (atomic) NSCache *caches;
+@property(atomic) NSCache *caches;
 
 @end

@@ -4,7 +4,7 @@
 //
 //  Created by lake on 2024/1/25.
 //
-#import "server/HTTPResponse.h"
+#import "../server/HTTPResponse.h"
 #import <Foundation/Foundation.h>
 
 @interface MyJsonResponse : NSObject <HTTPResponse> {

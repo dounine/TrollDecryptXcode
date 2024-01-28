@@ -33,8 +33,6 @@
 		210DB3E72B62530800DFAD02 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 210DB3DE2B62530800DFAD02 /* HTTPConnection.m */; };
 		210DB3E82B62530800DFAD02 /* HTTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 210DB3E02B62530800DFAD02 /* HTTPMessage.m */; };
 		210DB3E92B62530800DFAD02 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 210DB3E12B62530800DFAD02 /* HTTPServer.m */; };
-		210DB3EC2B62569400DFAD02 /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 210DB3EB2B62569400DFAD02 /* MyHTTPConnection.m */; };
-		210DB3F12B62653F00DFAD02 /* MyJsonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 210DB3F02B62653F00DFAD02 /* MyJsonResponse.m */; };
 		21DDF67B2B62010700D17066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF67A2B62010700D17066 /* Assets.xcassets */; };
 		21DDF6B72B6202B600D17066 /* SSZipArchive in Resources */ = {isa = PBXBuildFile; fileRef = 21DDF6A52B6202B600D17066 /* SSZipArchive */; };
 		21DDF6B82B6202B600D17066 /* LSApplicationProxy+AltList.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6A72B6202B600D17066 /* LSApplicationProxy+AltList.m */; };
@@ -48,8 +46,10 @@
 		21DDF6C12B6202B600D17066 /* TDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B52B6202B600D17066 /* TDUtils.m */; };
 		21DDF6C22B6202B600D17066 /* TDFileManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6B62B6202B600D17066 /* TDFileManagerViewController.m */; };
 		21DDF6C42B62038B00D17066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DDF6C32B62038B00D17066 /* main.m */; };
-		21E3AF7B2B6294CE00AC1563 /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E3AF7A2B6294CE00AC1563 /* MMPDeepSleepPreventer.m */; };
-		3291875DF17D90FD703258EF /* UnSleep.m in Sources */ = {isa = PBXBuildFile; fileRef = 32918C76C73DC6A2497DD1DE /* UnSleep.m */; };
+		3291877021DC7A6CB0596027 /* UnSleep.m in Sources */ = {isa = PBXBuildFile; fileRef = 329186875F4E7E9086A191FA /* UnSleep.m */; };
+		329189738BC93F90ABD44EF2 /* MyJsonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 329182055E7DEE6EA6C85963 /* MyJsonResponse.m */; };
+		329189D1F0DFAFBFDC98BC87 /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 32918E1B7DF5610C1F719390 /* MyHTTPConnection.m */; };
+		32918DC6430C582282766700 /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32918DCD2AC004D6A623C9F9 /* MMPDeepSleepPreventer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,10 +106,6 @@
 		210DB3E22B62530800DFAD02 /* HTTPLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPLogging.h; sourceTree = "<group>"; };
 		210DB3E32B62530800DFAD02 /* HTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponse.h; sourceTree = "<group>"; };
 		210DB3E42B62530800DFAD02 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
-		210DB3EA2B62567400DFAD02 /* MyHTTPConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHTTPConnection.h; sourceTree = "<group>"; };
-		210DB3EB2B62569400DFAD02 /* MyHTTPConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHTTPConnection.m; sourceTree = "<group>"; };
-		210DB3EF2B62653F00DFAD02 /* MyJsonResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJsonResponse.h; sourceTree = "<group>"; };
-		210DB3F02B62653F00DFAD02 /* MyJsonResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJsonResponse.m; sourceTree = "<group>"; };
 		21DDF66B2B62010600D17066 /* TrollDecryptXcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrollDecryptXcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DDF67A2B62010700D17066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21DDF6A52B6202B600D17066 /* SSZipArchive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SSZipArchive; sourceTree = "<group>"; };
@@ -130,10 +126,14 @@
 		21DDF6B52B6202B600D17066 /* TDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDUtils.m; sourceTree = "<group>"; };
 		21DDF6B62B6202B600D17066 /* TDFileManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDFileManagerViewController.m; sourceTree = "<group>"; };
 		21DDF6C32B62038B00D17066 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		21E3AF792B62947800AC1563 /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMPDeepSleepPreventer.h; sourceTree = "<group>"; };
-		21E3AF7A2B6294CE00AC1563 /* MMPDeepSleepPreventer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPDeepSleepPreventer.m; sourceTree = "<group>"; };
-		32918C76C73DC6A2497DD1DE /* UnSleep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnSleep.m; sourceTree = "<group>"; };
-		32918E4502A88F50054B720A /* UnSleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnSleep.h; sourceTree = "<group>"; };
+		3291815724B57F193E9AF082 /* MyJsonResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJsonResponse.h; sourceTree = "<group>"; };
+		329182055E7DEE6EA6C85963 /* MyJsonResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJsonResponse.m; sourceTree = "<group>"; };
+		329186875F4E7E9086A191FA /* UnSleep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnSleep.m; sourceTree = "<group>"; };
+		32918B16D2D9B576A74A69B7 /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPDeepSleepPreventer.h; sourceTree = "<group>"; };
+		32918B4C7CE7522DE00B393B /* UnSleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnSleep.h; sourceTree = "<group>"; };
+		32918DCD2AC004D6A623C9F9 /* MMPDeepSleepPreventer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPDeepSleepPreventer.m; sourceTree = "<group>"; };
+		32918E1B7DF5610C1F719390 /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHTTPConnection.m; sourceTree = "<group>"; };
+		32918F9E7ACAE42F58128D29 /* MyHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHTTPConnection.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,8 +226,6 @@
 		21DDF66D2B62010600D17066 /* TrollDecryptXcode */ = {
 			isa = PBXGroup;
 			children = (
-				21E3AF792B62947800AC1563 /* MMPDeepSleepPreventer.h */,
-				21E3AF7A2B6294CE00AC1563 /* MMPDeepSleepPreventer.m */,
 				210DB3762B621B7C00DFAD02 /* server */,
 				21DDF6B02B6202B600D17066 /* control */,
 				21DDF6AD2B6202B600D17066 /* entitlements.plist */,
@@ -248,14 +246,40 @@
 				21DDF6B52B6202B600D17066 /* TDUtils.m */,
 				21DDF67A2B62010700D17066 /* Assets.xcassets */,
 				21DDF6C32B62038B00D17066 /* main.m */,
-				210DB3EA2B62567400DFAD02 /* MyHTTPConnection.h */,
-				210DB3EF2B62653F00DFAD02 /* MyJsonResponse.h */,
-				210DB3F02B62653F00DFAD02 /* MyJsonResponse.m */,
-				210DB3EB2B62569400DFAD02 /* MyHTTPConnection.m */,
-				32918C76C73DC6A2497DD1DE /* UnSleep.m */,
-				32918E4502A88F50054B720A /* UnSleep.h */,
+				32918DDED0DD45AC47FF4D29 /* audio */,
+				3291874DE0BD5EEACF8D4E05 /* http */,
+				329182B5BA5AD1F985042670 /* dump */,
 			);
 			path = TrollDecryptXcode;
+			sourceTree = "<group>";
+		};
+		329182B5BA5AD1F985042670 /* dump */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dump;
+			sourceTree = "<group>";
+		};
+		3291874DE0BD5EEACF8D4E05 /* http */ = {
+			isa = PBXGroup;
+			children = (
+				3291815724B57F193E9AF082 /* MyJsonResponse.h */,
+				32918F9E7ACAE42F58128D29 /* MyHTTPConnection.h */,
+				329182055E7DEE6EA6C85963 /* MyJsonResponse.m */,
+				32918E1B7DF5610C1F719390 /* MyHTTPConnection.m */,
+			);
+			path = http;
+			sourceTree = "<group>";
+		};
+		32918DDED0DD45AC47FF4D29 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				32918B16D2D9B576A74A69B7 /* MMPDeepSleepPreventer.h */,
+				32918DCD2AC004D6A623C9F9 /* MMPDeepSleepPreventer.m */,
+				32918B4C7CE7522DE00B393B /* UnSleep.h */,
+				329186875F4E7E9086A191FA /* UnSleep.m */,
+			);
+			path = audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,11 +356,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				210DB3AE2B62528B00DFAD02 /* DDLog.m in Sources */,
-				210DB3EC2B62569400DFAD02 /* MyHTTPConnection.m in Sources */,
-				210DB3F12B62653F00DFAD02 /* MyJsonResponse.m in Sources */,
 				210DB3AF2B62528B00DFAD02 /* DDTTYLogger.m in Sources */,
 				210DB3D22B6252D500DFAD02 /* HTTPDynamicFileResponse.m in Sources */,
-				21E3AF7B2B6294CE00AC1563 /* MMPDeepSleepPreventer.m in Sources */,
 				210DB3B92B6252AE00DFAD02 /* DDNumber.m in Sources */,
 				21DDF6B92B6202B600D17066 /* Makefile in Sources */,
 				21DDF6C02B6202B600D17066 /* TDRootViewController.m in Sources */,
@@ -367,7 +388,10 @@
 				21DDF6C12B6202B600D17066 /* TDUtils.m in Sources */,
 				210DB3E82B62530800DFAD02 /* HTTPMessage.m in Sources */,
 				210DB3D12B6252D500DFAD02 /* HTTPAsyncFileResponse.m in Sources */,
-				3291875DF17D90FD703258EF /* UnSleep.m in Sources */,
+				32918DC6430C582282766700 /* MMPDeepSleepPreventer.m in Sources */,
+				3291877021DC7A6CB0596027 /* UnSleep.m in Sources */,
+				329189738BC93F90ABD44EF2 /* MyJsonResponse.m in Sources */,
+				329189D1F0DFAFBFDC98BC87 /* MyHTTPConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

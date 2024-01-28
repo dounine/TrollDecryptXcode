@@ -1,6 +1,5 @@
 
 #import "MyJsonResponse.h"
-#import <Foundation/Foundation.h>
 
 @implementation MyJsonResponse
 
@@ -9,14 +8,14 @@
         offset = 0;
         data = dataParam;
         headers = [NSMutableDictionary dictionary];
-        
+
         headers[@"Content-Type"] = @"application/json;charset=utf-8";
     }
     return self;
 }
 
 - (UInt64)contentLength {
-    return (UInt64)[data length];
+    return (UInt64) [data length];
 }
 
 - (BOOL)isDone {
@@ -27,7 +26,7 @@
     return headers;
 }
 
-- (id)setHeader:(NSString *)name value:(NSString *)valueParam{
+- (id)setHeader:(NSString *)name value:(NSString *)valueParam {
     headers[name] = valueParam;
     return self;
 }

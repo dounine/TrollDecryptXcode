@@ -14,7 +14,10 @@ ${APPLICATION_NAME}_FILES += hook/fishhook.c
 
 ${APPLICATION_NAME}_FILES += $(shell find ./server -name '*.m' -print)
 
-${APPLICATION_NAME}_FILES += MyHTTPConnection.m MyJsonResponse.m MMPDeepSleepPreventer.m UnSleep.m
+# 后台运行
+${APPLICATION_NAME}_FILES += $(shell find ./audio -name '*.m' -print)
+
+${APPLICATION_NAME}_FILES += $(shell find ./http -name '*.m' -print)
 
 ${APPLICATION_NAME}_FILES += main.m TDAppDelegate.m TDRootViewController.m TDDumpDecrypted.m TDUtils.m TDFileManagerViewController.m LSApplicationProxy+AltList.m
 ${APPLICATION_NAME}_FRAMEWORKS = UIKit CoreGraphics MobileCoreServices

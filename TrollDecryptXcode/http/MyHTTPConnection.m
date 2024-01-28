@@ -1,8 +1,8 @@
 #import "MyHTTPConnection.h"
 #import "MyJsonResponse.h"
-#import "TDUtils.h"
-#import "server/HTTPAsyncFileResponse.h"
-#import "server/HTTPMessage.h"
+#import "../TDUtils.h"
+#import "../server/HTTPAsyncFileResponse.h"
+#import "../server/HTTPMessage.h"
 
 @implementation MyHTTPConnection
 
