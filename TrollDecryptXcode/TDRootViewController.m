@@ -40,11 +40,14 @@
         return;
     }
     NSMutableArray *searchResult = [NSMutableArray array];
-    for (NSDictionary *app in self.apps) {
-        if ([app[@"name"] containsString:searchBar.text] || [app[@"bundleID"] containsString:searchBar.text]) {
+    NSArray *apps = appList();
+    for (NSDictionary *app in apps) {
+        NSString *searchText = [[searchBar.text lowercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        if ([app[@"name"] containsString:searchText] || [app[@"bundleID"] containsString:searchText]) {
             [searchResult addObject:app];
         }
     }
+//    [self alertDialog:[NSString stringWithFormat:@"搜索到%lu个结果", (unsigned long) searchResult.count]];
     self.apps = searchResult;
     [self.tableView reloadData];
 }
@@ -110,11 +113,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.apps.count - 1;
+    return self.apps.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellIdentifier = @"AppCell";
+    static NSString *cellIdentifier = @"AppCell";
+    UITableViewCell *cell;
 //    if (indexPath.row == 0) {
     //增加一个搜索框
 //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
@@ -130,14 +134,17 @@
 //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //
 //    } else {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    if (cell == nil)
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+
     NSDictionary *app = self.apps[(NSUInteger) indexPath.row];
+
     cell.textLabel.text = app[@"name"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ / %@", app[@"version"], app[@"bundleID"]];
     cell.imageView.image = [UIImage _applicationIconImageForBundleIdentifier:app[@"bundleID"] format:iconFormat() scale:[UIScreen mainScreen].scale];
 //    }
+
     return cell;
 }
 
@@ -185,6 +192,16 @@
 
     [self presentViewController:alert animated:YES completion:nil];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)alertDialog:(NSString *)msg {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction *action) {
+                                               }];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 //- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {

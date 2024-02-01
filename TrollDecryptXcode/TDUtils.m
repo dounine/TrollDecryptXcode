@@ -36,7 +36,7 @@ NSArray *appList(void) {
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     [apps sortUsingDescriptors:@[descriptor]];
 
-    [apps addObject:@{@"bundleID": @"", @"name": @"", @"version": @"", @"executable": @""}];
+//    [apps addObject:@{@"bundleID": @"", @"name": @"", @"version": @"", @"executable": @""}];
 
     return [apps copy];
 }
@@ -145,7 +145,7 @@ void decryptApp(NSDictionary *app, NSMutableDictionary *callback) {
     });
 }
 
-void bfinject_rocknroll(pid_t pid, NSString *appName, NSString *version,NSMutableDictionary *callback) {
+void bfinject_rocknroll(pid_t pid, NSString *appName, NSString *version, NSMutableDictionary *callback) {
     NSLog(@"[trolldecrypt] Spawning thread to do decryption in the background...");
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
