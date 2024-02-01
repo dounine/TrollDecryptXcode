@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
-@interface TDRootViewController : UITableViewController
+@interface TDRootViewController : UITableViewController <UISearchBarDelegate>
 
-@property (nonatomic, strong) NSArray *apps;
+@property(nonatomic, strong) NSArray *apps;
 
 @end
