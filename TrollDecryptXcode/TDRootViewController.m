@@ -43,7 +43,7 @@
     NSArray *apps = appList();
     for (NSDictionary *app in apps) {
         NSString *searchText = [[searchBar.text lowercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        if ([app[@"name"] containsString:searchText] || [app[@"bundleID"] containsString:searchText]) {
+        if ([[app[@"name"] lowercaseString] containsString:searchText] || [app[@"bundleID"] containsString:searchText]) {
             [searchResult addObject:app];
         }
     }
